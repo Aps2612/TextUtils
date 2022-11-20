@@ -1,12 +1,14 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'   // PropTypes are used to define the definition of the props used
 import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
     return (
+        // props cannot be changed i.e. props are read only.
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">{props.title}</Link>
+                {/* This props.title is rendered from the app.js navbar calling component */}
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -32,9 +34,9 @@ export default function Navbar(props) {
 Navbar.propTypes = {
     title: PropTypes.string.isRequired,
     aboutText: PropTypes.string.isRequired
-}
+}      //This defines the definition of the props used in our component
 
 Navbar.defaultProps = {
     title: 'Set title here',
     aboutText: 'About'
-  };
+  };   //This is used when nothing is passed as props

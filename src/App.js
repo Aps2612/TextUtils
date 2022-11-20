@@ -41,6 +41,7 @@ function App() {
     <>
     <Router>
     <Navbar title="Text-Tools" mode={mode} toggleMode={toggleMode} key={new Date()} />
+    {/* We are using title="Text-Tools" to pass title as props in our navbar components */}
     <Alert alert={alert}/>
     <div className="container my-3">
     <Switch>
