@@ -44,6 +44,8 @@ function App() {
     {/* We are using title="Text-Tools" to pass title as props in our navbar components */}
     <Alert alert={alert}/>
     <div className="container my-3">
+      {/* Container is a class of bootstrap that gives good look to our div.By default it makes center allignment the components that are used inside that div */}
+      {/* my-3 gives margin in y */}
     <Switch>
     {/* /users --> Component 1
         /users/home --> Component 2 */}

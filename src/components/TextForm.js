@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+// useState is a hook
 
 export default function TextForm(props) {
     const handleUpClick = ()=>{
@@ -21,7 +21,9 @@ export default function TextForm(props) {
     }
 
     const handleOnChange = (event)=>{
+        // event: this we get when there is any change in textarea
         setText(event.target.value) 
+        // setText is used here because when we type on textarea then value of that textarea is changed but that value is assigned to text so as to change the value of textarea we have to change the value of text
     }
 
     // Credits: A
@@ -38,6 +40,10 @@ export default function TextForm(props) {
     }
 
     const [text, setText] = useState(''); 
+    //Node this is used inside the functional component and not outside it
+    //setText will be used as updation function to change the value of text.
+    // useState('') gives the default value to text.
+    // In the class based version of react we use this keyword to change the state but in functional based component we use hooks
     // text = "new text"; // Wrong way to change the state
     // setText("new text"); // Correct way to change the state
     return (
@@ -46,6 +52,8 @@ export default function TextForm(props) {
             <h1 className='mb-4'>{props.heading}</h1>
             <div className="mb-3"> 
             <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'#13466e':'white', color: props.mode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
+            {/* value specifies what will be contained inside text area */}
+            {/* we will have to listen for onChange event in order to write something on textarea otherwise we will not be able to write in textarea */}
             </div>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>Convert to Lowercase</button>
