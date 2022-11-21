@@ -12,7 +12,7 @@ import {
 
  
 function App() {
-  const [mode, setMode] = useState('light'); // Whether dark mode is enabled or not
+  const [mode, setMode] = useState('light'); // Whether dark mode is enabled or not and we have implemented the control of dark mode in app.js in order to control dark mode by simply passing the props in the respective component.
   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type)=>{

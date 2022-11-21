@@ -26,7 +26,7 @@ export default function TextForm(props) {
         // setText is used here because when we type on textarea then value of that textarea is changed but that value is assigned to text so as to change the value of textarea we have to change the value of text
     }
 
-    // Credits: A
+    
     const handleCopy = () => {
         navigator.clipboard.writeText(text); 
         props.showAlert("Copied to Clipboard!", "success");
@@ -34,8 +34,8 @@ export default function TextForm(props) {
 
     // Credits: Coding Wala
     const handleExtraSpaces = () => {
-        let newText = text.split(/[ ]+/);
-        setText(newText.join(" "));
+        let newText = text.split(/[ ]+/);  // If there is  space then it will be removed
+        setText(newText.join(" "));  // This will join words with one space between them
         props.showAlert("Extra spaces removed!", "success");
     }
 
@@ -47,8 +47,10 @@ export default function TextForm(props) {
     // text = "new text"; // Wrong way to change the state
     // setText("new text"); // Correct way to change the state
     return (
-        <>
+        <>  
+        {/* This arrow is used because we should wrap everything inside our jsx as we can return only one thing from our jsx */}
         <div className="container" style={{color: props.mode==='dark'?'white':'#042743'}}> 
+        {/* {} specifies that we are using javascript */}
             <h1 className='mb-4'>{props.heading}</h1>
             <div className="mb-3"> 
             <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'#13466e':'white', color: props.mode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>

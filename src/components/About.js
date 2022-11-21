@@ -6,7 +6,7 @@ export default function About(props) {
     //     color: 'black',
     //     backgroundColor: 'white'
     // }) 
-    let myStyle = {
+    let myStyle = {    //This is javascript object.Now the idea of dark mode is to make this object a state and we can furthur control it using hooks i.e., when dark mode button is clicked then this style will be changed
         color: props.mode ==='dark'?'white':'#042743',
         backgroundColor: props.mode ==='dark'?'rgb(36 74 104)':'white', 
     }

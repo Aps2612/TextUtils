@@ -6,6 +6,8 @@ export default function Navbar(props) {
     return (
         // props cannot be changed i.e. props are read only.
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+            {/* {} is template literal and its used when we want to write javascript */}
+            {/* $ specifies that we can use variable here */}
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">{props.title}</Link>
                 {/* This props.title is rendered from the app.js navbar calling component */}
@@ -23,6 +25,7 @@ export default function Navbar(props) {
                     </ul>
                     <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
                         <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault"/>
+                        {/* When on click even is envoked then the toggle mode function of the app.js in called */}
                         <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable DarkMode</label>
                     </div>
                 </div>
