@@ -30,11 +30,13 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = '#042743';
       showAlert("Dark mode has been enabled", "success");  // shows alert when dark mode is enabled
+      //Now we can also set the title of our page to something else when dark mode is enabled using document.title="";
     }
     else{
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light mode has been enabled", "success");
+      
     }
   }
   return (
