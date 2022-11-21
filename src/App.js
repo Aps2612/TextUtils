@@ -41,7 +41,8 @@ function App() {
   }
   return (
     <>
-    <Router>
+    <Router>  
+    {/* for using react router we will first install package of router using npm install react router dom */}
     <Navbar title="Text-Tools" mode={mode} toggleMode={toggleMode} key={new Date()} />
     {/* We are using title="Text-Tools" to pass title as props in our navbar components */}
     <Alert alert={alert}/>
@@ -52,6 +53,7 @@ function App() {
     {/* /users --> Component 1
         /users/home --> Component 2 */}
           <Route exact path="/about">
+            {/* exact word is used for exact matching and its recommended to use exact paths for navigating */}
             <About mode={mode} />
           </Route>
           <Route exact path="/">

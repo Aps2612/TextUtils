@@ -1,6 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'   // PropTypes are used to define the definition of the props used
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types'        // PropTypes are used to define the definition of the props used
+import { Link } from 'react-router-dom';  // used in router to navigate between pages without loading
 
 export default function Navbar(props) {
     return (
@@ -10,6 +10,7 @@ export default function Navbar(props) {
             {/* $ specifies that we can use variable here */}
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">{props.title}</Link>
+                {/* Now instead of link and to we will use a and href then it will work but page will reload */}
                 {/* This props.title is rendered from the app.js navbar calling component */}
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
