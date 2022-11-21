@@ -15,21 +15,21 @@ function App() {
   const [mode, setMode] = useState('light'); // Whether dark mode is enabled or not and we have implemented the control of dark mode in app.js in order to control dark mode by simply passing the props in the respective component.
   const [alert, setAlert] = useState(null);
 
-  const showAlert = (message, type)=>{
+  const showAlert = (message, type)=>{   //Used to handle the alert message.Paramter message means which message we want to display and type parameter denotes the type of alert
       setAlert({
         msg: message,
         type: type
       })
       setTimeout(() => {
           setAlert(null);
-      }, 1500);
-  }
+      }, 1500);   // We have used timeout because we do not want the alert mesaage to remain permanently on screen so we will use setTimeout to make the alert null after 1500 ms
+  }   // Now we can pass this function in the components where we want to show alert.
 
   const toggleMode = ()=>{
     if(mode === 'light'){
       setMode('dark');
       document.body.style.backgroundColor = '#042743';
-      showAlert("Dark mode has been enabled", "success");
+      showAlert("Dark mode has been enabled", "success");  // shows alert when dark mode is enabled
     }
     else{
       setMode('light');
