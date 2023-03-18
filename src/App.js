@@ -41,7 +41,8 @@ function App() {
   }
   return (
     <>
-    <Router>  
+    <Router> 
+    {/* We have to enclose everything in our router tab as a part of syntax */}
     {/* for using react router we will first install package of router using npm install react router dom */}
     <Navbar title="Text-Tools" mode={mode} toggleMode={toggleMode} key={new Date()} />
     {/* We are using title="Text-Tools" to pass title as props in our navbar components */}

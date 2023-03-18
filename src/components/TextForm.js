@@ -32,7 +32,6 @@ export default function TextForm(props) {
         props.showAlert("Copied to Clipboard!", "success");
     }
 
-    // Credits: Coding Wala
     const handleExtraSpaces = () => {
         let newText = text.split(/[ ]+/);  // If there is  space then it will be removed
         setText(newText.join(" "));  // This will join words with one space between them
@@ -40,15 +39,15 @@ export default function TextForm(props) {
     }
 
     const [text, setText] = useState(''); 
-    //Node this is used inside the functional component and not outside it
+    //Note this is used inside the functional component and not outside it
     //setText will be used as updation function to change the value of text.
     // useState('') gives the default value to text.
-    // In the class based version of react we use this keyword to change the state but in functional based component we use hooks
+    // In the class based version of react we use "this" keyword to change the state but in functional based component we use hooks
     // text = "new text"; // Wrong way to change the state
     // setText("new text"); // Correct way to change the state
     return (
         <>  
-        {/* This arrow is used because we should wrap everything inside our jsx as we can return only one thing from our jsx */}
+        {/* <> This arrow is used because we should wrap everything inside our jsx as we can return only one thing from our jsx */}
         <div className="container" style={{color: props.mode==='dark'?'white':'#042743'}}> 
         {/* {} specifies that we are using javascript */}
             <h1 className='mb-4'>{props.heading}</h1>
@@ -62,7 +61,7 @@ export default function TextForm(props) {
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear Text</button>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy Text</button>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
-            {/* disabled to use to make the buttons disable.In this when text length is 0 then buttons will be disabled */}
+            {/*disabled to use to make the buttons disable.In this when text length is 0 then buttons will be disabled*/}
         </div>
         <div className="container my-3" style={{color: props.mode==='dark'?'white':'#042743'}}>
             <h2>Your text summary</h2>
